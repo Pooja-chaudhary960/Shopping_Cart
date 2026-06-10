@@ -74,6 +74,9 @@ const ProductDetail = () => {
                   <ShoppingCart className="w-5 h-5" />
                   <span>Add to Cart</span>
                 </button>
+                 <Link to={'/'} className=" w-full py-3 border-2 border-orange-600 text-orange-400 font-bold rounded-full  cursor-pointer hover:bg-orange-700 transition duration-300 flex items-center justify-center space-x-2 transform hover:ring-4 hover:ring-orange-500/40 uppercase tracking-wider">
+                  Keep Shopping
+                  </Link>
               </div>
             </div>
           </div>
