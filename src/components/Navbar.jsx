@@ -1,8 +1,10 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import { Home, ShoppingCart } from 'lucide-react';
+import { useCart } from '../context/CartContext';
 
 const Navbar = () => {
+  const {cartCount} = useCart() 
   return (
     <header className="sticky top-0 bg-gray-950/95 backdrop-blur-md text-white shadow-2xl border-b border-orange-900">
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
@@ -16,6 +18,7 @@ const Navbar = () => {
           <Link to={'/cart'}
            className="relative p-3 bg-orange-500/10 rounded-xl hover:bg-orange-500/20 transition-duration-200 border border-orange-400/50 shadow-lg cursor-pointer">
             <ShoppingCart className="w-6 h-6 text-orange-400" />
+            {cartCount>0 && (<span>{cartCount}</span>)}
           </Link>
         </nav>
       </div>

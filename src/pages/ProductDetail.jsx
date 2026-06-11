@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { initialProducts } from "../data/product";
 import { ShoppingCart, ChevronLeft, Tag, Zap } from "lucide-react";
+import { useCart } from "../context/CartContext";
 
 const ProductDetail = () => {
   const { id } = useParams();
@@ -69,7 +70,9 @@ const ProductDetail = () => {
                 </li>
               </ul>
 
-              <div className="mt-5 space-y-4 flex justify-center items-center flex-col">
+              <div className="mt-5 space-y-4 flex justify-center items-center flex-col"
+                        onClick={()=>addTocart(product)}
+              >
                 <button className=" w-full py-3 bg-orange-600 text-white font-bold rounded-full shadow-lg shadow-orange-800/50 cursor-pointer hover:bg-orange-700 transition duration-300 flex items-center justify-center space-x-2 transform hover:ring-4 hover:ring-orange-500/40 uppercase tracking-wider">
                   <ShoppingCart className="w-5 h-5" />
                   <span>Add to Cart</span>
